@@ -11,7 +11,7 @@ const PostList = () => {
     })
     return (
         <div className="postlist">
-            <h1 className="title">All Posts</h1>
+            <h1 className="title">All Docs</h1>
             {postlist.length && 
                 postlist.map((post, i) => {
                     return (
