@@ -2,7 +2,7 @@
 title: Pipeline Builder Help
 author: Anand Simmy
 date: 2021-01-20T06:52:07.695Z
-thumbnail: /images/netlifyicon.png
+thumbnail: /images/download.png
 ---
 # Introducing Pipelines
 
