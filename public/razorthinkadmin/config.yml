@@ -6,9 +6,9 @@ media_folder: "public/images"
 public_folder: "/images" 
 
 collections:
-  - name: "posts" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog Posts" # Used in the UI
-    folder: "posts" # The path to the folder where the documents are stored
+  - name: "general" # Used in routes, e.g., /admin/collections/blog
+    label: "General" # Used in the UI
+    folder: "contents/general" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     nested:
@@ -17,18 +17,39 @@ collections:
       # adding a meta object with a path property allows editing the path of entries
       # moving an existing entry will move the entire sub tree of the entry to the new location
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-    fields: # The fields for each document, usually in front matter
+    fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "help-docs" # Used in routes, e.g., /admin/collections/blog
-    label: "Help Docs" # Used in the UI
-    folder: "help" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+
+  - name: "pipelines"
+      label: "Pipelines"
+      folder: "contents/pipelines"
+      create: true
+      slug: "{{slug}}"
+      nested:
+        depth: 100
+        summary: '{{title}}'
+      meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+      fields:
+        - { label: "Title", name: "title", widget: "string" }
+        - { label: "Author", name: "author", widget: "string" }
+        - { label: "Publish Date", name: "date", widget: "datetime" }
+        - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+        - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "faq"
+    label: "FAQ"
+    folder: "contents/faq"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    meta: { path: { widget: "select", options: ["overview","content","working"], label: 'Path', index_file: 'index' } }
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }

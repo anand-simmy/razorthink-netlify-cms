@@ -44,6 +44,10 @@ const getPosts = (docsPath) => {
         }
         let ilist = []
         files.forEach((file, i) => {
+            if(fs.lstatSync(`${docsPath}/${file}`).isDirectory()){
+                getPosts(`${docsPath}/${file}`)
+                return
+            }
             let obj = {}
             let post
             fs.readFile(`${docsPath}/${file}`, "utf8", (err, contents) => {
