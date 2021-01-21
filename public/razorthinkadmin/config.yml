@@ -18,26 +18,28 @@ collections:
       # moving an existing entry will move the entire sub tree of the entry to the new location
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "pipelines"
-      label: "Pipelines"
-      folder: "contents/pipelines"
-      create: true
-      slug: "{{slug}}"
-      nested:
-        depth: 100
-        summary: '{{title}}'
-      meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-      fields:
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Author", name: "author", widget: "string" }
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
-        - { label: "Body", name: "body", widget: "markdown" }
+    label: "Pipelines"
+    folder: "contents/pipelines"
+    create: true
+    slug: "{{slug}}"
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "faq"
     label: "FAQ"
     folder: "contents/faq"
