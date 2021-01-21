@@ -18,6 +18,7 @@ collections:
       # moving an existing entry will move the entire sub tree of the entry to the new location
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
     fields:
+      - { label: "Select collection", name: "selectpath", widget: "select", options: ["Overview","Setup","Troubleshoot"], }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }

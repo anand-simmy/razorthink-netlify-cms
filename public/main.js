@@ -72,6 +72,7 @@ const getPosts = (docsPath) => {
                     }
                     return lines.join("\n")
                 }
+                console.log('contents', `${docsPath}/${file}`, contents)
                 const lines = contents.split("\n")
                 const metadataIndices = lines.reduce(getMetadataIndices, [])
                 const metadata = parseMetadata({lines, metadataIndices})
