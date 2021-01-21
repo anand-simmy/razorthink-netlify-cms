@@ -23,7 +23,6 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-
   - name: "pipelines"
       label: "Pipelines"
       folder: "contents/pipelines"
@@ -39,7 +38,6 @@ collections:
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
         - { label: "Body", name: "body", widget: "markdown" }
-
   - name: "faq"
     label: "FAQ"
     folder: "contents/faq"
