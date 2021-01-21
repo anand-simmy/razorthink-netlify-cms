@@ -1,8 +1,7 @@
 const path = require("path")
 const fs = require("fs")
 
-const dirPathPosts = path.join(__dirname, "../posts")
-const dirPathHelp = path.join(__dirname, "../help")
+const dirPathPosts = path.join(__dirname, "../contents")
 const dirPathPages = path.join(__dirname, "../src/pages/content")
 let postlist = []
 let pagelist = []
@@ -126,5 +125,4 @@ const getPages = () => {
 }
 
 getPosts(dirPathPosts)
-getPosts(dirPathHelp)
 getPages()
