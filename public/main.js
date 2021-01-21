@@ -43,6 +43,7 @@ const getPosts = (docsPath) => {
         }
         let ilist = []
         files.forEach((file, i) => {
+            //checking if its a directory
             if(fs.lstatSync(`${docsPath}/${file}`).isDirectory()){
                 getPosts(`${docsPath}/${file}`)
                 return
